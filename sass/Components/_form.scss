@@ -1,0 +1,48 @@
+.form {
+  &__group:not(:last-child) {
+    margin-bottom: 2rem;
+  }
+
+  &__input {
+    color: inherit;
+    font-size: 1.5rem;
+    padding: 1.5rem 2rem;
+    font-family: inherit;
+    border-radius: 3px;
+    background-color: rgba($color-white, 0.5);
+    border: none;
+    display: block;
+    width: 80%;
+    border-bottom: 3px solid transparent;
+
+    &:focus {
+      outline: none;
+      border-bottom: 3px solid $color-primary;
+      box-shadow: 0 1rem 2rem rgba($color-black, 0.1);
+    }
+
+    &:focus:invalid {
+      border-bottom: 3px solid $color-secondary-dark;
+    }
+
+    &::-webkit-input-placeholder {
+      color: $color-gery-dark2;
+    }
+  }
+
+  &__lable {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-left: 2rem;
+    margin-top: 0.7rem;
+    display: block;
+    transition: all 0.3s;
+  }
+
+  // selecting the sibling using ~
+  &__input:placeholder-shown ~ &__lable {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-4rem);
+  }
+}
